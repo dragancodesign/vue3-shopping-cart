@@ -55,10 +55,16 @@ git status
 git commit -m "Commit 01: Initial commit"  
 git status  
 git push -u origin main
+```
+### *To check on which GitHub repository URL I am now? It shows me the link:*   
+```git remote -v``` The output is:  
+```
+origin  https://github.com/dragancodesign/vue3-shopping-cart.git (fetch)
+origin  https://github.com/dragancodesign/vue3-shopping-cart.git (push)
+```
 
-
+* * * 
 git push origin HEAD --force  
-
 git reset --hard HEAD^  -> maybe did not work  
 git reset --hard HEAD  
 git reset --hard HEAD~2  
