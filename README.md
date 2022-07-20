@@ -78,7 +78,8 @@ git config pull.ff only
 
 git remote set-url origin https://github.com/dragancodesign/vue3-shopping-cart.git  
 
-* To audit / revert repository / branch :  
+* To audit / revert repository / branch : 
+``` 
 git branch // → Shows us on which branch we are? On main?     
 git diff  
 git log  
@@ -86,11 +87,9 @@ npm audit fix --force
 npm run serve ( When using npm )  
 ```
 
-
-- To install axios:  
+- To install AXIOS:    
 ```npm install --save axios vue-axios``` OR: ```npm i vue-axios```
-
-
+```
 npm init  
 npm init vue@  
 npm init vue@latest  
@@ -98,8 +97,6 @@ npm run lint
 npm run dev  
 npm install vue-draggable-next  
 
-
-??? 
 yarn init  
 git remote show origin  
 git config --get remote.origin.url  
@@ -107,20 +104,19 @@ git config user.email
 git config user.name  
 yarn --version  
 yarn  
-```vue --version```  
+```
+## - WORKING IN PROJECT: 
+- Navigation set up in App.vue file:  
+```html
+<template>
+  <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link> |
+    <router-link to="/product">Product</router-link>
+  </nav>
+  <router-view/>
+</template>
+```
 
 
-## - VueForge School Project based on Trello App instructions :-)  
 
-// eslint --init  - NOT NOW ???  
-npm install  
-npm run dev  
-cd /Users/codedev/Dev_Vue/trello-vue-forge  
-node "/Users/codedev/.vscode/extensions/vue.volar-0.38.5-darwin-x64/dist/preview-bin/vite.js" --port=3333  
-touch package.json  // → if it's complaining there is no package.json file  
-npm list -g --depth=0  
-npm init vue@latest
-cd trello-vue-forge  
-git init  
-npm init  
-git clone https://github.com/vueschool/vuejs-forge-the-project.git 
