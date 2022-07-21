@@ -1,11 +1,24 @@
 <template>
-  <nav>
+  <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
-    <router-link to="/product">Product</router-link>
-  </nav>
+    <router-link to="/basket">Basket</router-link>
+  </div>
   <router-view/>
 </template>
+
+<script>
+
+
+
+export default {
+
+  created() {
+    this.$store.dispatch('loadProducts');
+      } 
+}
+  
+</script>
 
 <style lang="scss">
 #app {
@@ -27,5 +40,6 @@ nav {
       color: #42b983;
     }
   }
+  
 }
 </style>

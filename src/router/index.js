@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import ProductView from '../views/ProductView.vue'
+import BasketView from '../views/BasketView.vue'
 
 const routes = [
   {
@@ -17,9 +17,9 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
-    path: '/product',
-    name: 'Product',
-    component: ProductView
+    path: '/basket',
+    name: 'Basket',
+    component: BasketView
   }
 ]
 
