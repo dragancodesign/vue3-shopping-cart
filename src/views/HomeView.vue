@@ -1,7 +1,7 @@
 <template>
   <div class="home">
   <h1>E-Shop</h1>
-  <h4>You have {{ productsInBag.length }} Products in Bag</h4>
+  <h5>You have {{ productsInBag.length }} Products in Bag and total amount is: € {{orderTotal()}}</h5>
     <div class="products">
       <div
         v-for="(product, index) in this.products" :key="index" 
@@ -48,6 +48,13 @@ export default {
     },
     isInBag(product) {
       return this.productsInBag.find(item => item.id == product.id)      
+    },
+    orderTotal() {
+      var total = 0;
+      this.productsInBag.forEach(item => {
+        total += item.price * item.quantity;
+      });
+      return total.toFixed(2);
     }
   }
 }

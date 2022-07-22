@@ -26,3 +26,7 @@ An expression which is executed if the condition is falsy (that is, has a value 
 
 Besides ```false```, possible falsy expressions are: ```null```, ```NaN```, ```0```, the empty string (```""```), and ```undefined```. If ```condition``` is any of these, the result of the conditional expression will be the result of executing the expression ```exprIfFalse```.  
 
+## Installing and Starting application the application using npm :  
+1. Navigate to the Project folder, this folder contains: ```package.json``` file   
+2. Run: ```npm install``` to install packages defined in the ```package.json``` file  
+3. Run: ```npm start``` to start installed application 

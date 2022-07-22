@@ -3,7 +3,7 @@
     <h1>About us</h1>
 
 
-<h2>We are creating web store applications using Vue.js</h2>
+<h2>Here is a sample of web store applications using Vue.js</h2>
 
 <h3>Vue.js is progressive JavaScript Framework</h3>
 
@@ -12,12 +12,12 @@
 
     <div class="service">
       <h4>Approachable</h4>
-      <p>An easy way to add the new products. You add product image, price, description and any data relevant to the product.</p>
+      <p>Here we are using an API to show products on the Home page and Shopping Bag page. Here we are using data to add product image, price, description and any data relevant to the product.</p>
     </div>
 
     <div class="service">
     <h4>Performant</h4>
-    <p>Truly reactive, compiler-optimized rendering system that rarely requires manual optimization. It loads the pages fast.</p>
+    <p>Truly reactive, compiler-optimized rendering system that rarely requires manual optimization. It loads the pages very fast.</p>
     </div>
 
     <div class="service">

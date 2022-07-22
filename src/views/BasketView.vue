@@ -1,10 +1,41 @@
 <template>
 <h1>Shopping Cart</h1>
+
+<div class="basket">
+  <div class="items">
+    
+    <template v-if="productsInBag.length">
+
+      <div v-for="(product, index) in productsInBag" :key="index" class="item">
+        <div class="remove" @click="this.$store.dispatch('removeFromBag', product.id)">Remove item</div>
+        <div class="photo">
+          <img :src="product.image" alt="">
+        </div>
+        <div class="description">
+            {{product.title}}
+        </div>
+        <div class="price">
+          <span class="quantity-area">
+            <button :disabled="product.quantity<=1" @click="product.quantity--">-</button>
+            <span class="quantity">{{product.quantity}}</span>
+            <button @click="product.quantity++">+</button>
+          </span>
+          <span class="amount">€ {{ (product.price * product.quantity).toFixed(2) }}</span>
+        </div>
+      </div>
+      <div class="grand-total"> Grand Total: € {{orderTotal()}}</div>
+      </template>
+      
+      <template v-else>
+        <h4>No items in bag yet</h4>
+      </template>
+  </div>
+</div>
 </template>
 
 <script>
 
-// import { mapState } from 'vuex'
+import { mapState } from 'vuex'
 
 export default {
   name: 'BasketView',
@@ -18,6 +49,9 @@ export default {
       return total.toFixed(2);
     }
   },
+  computed: mapState([
+    'productsInBag' 
+  ]),
 }
 </script>
 
