@@ -1,16 +1,25 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
+// import { update } from 'immutable';
 
 export default createStore({
   state: {
-    products: [1,2,3]
+    products: [],
+    productsInBag: []
   },
   getters: {
   },
   mutations: {
     loadProducts(state, products) {
-      console.log(products);
+      
       state.products = products;
+    }, 
+    addToBag(state, product) {
+      state.productsInBag.push(product);
+    },
+    removeFromBag(state, productId) {
+      var updatedBag = state.productsInBag.filter(item => productId != item.id);
+      state.productsInBag = updatedBag;
     }
   },
   actions: {
@@ -20,8 +29,17 @@ export default createStore({
       .then(response => { 
         commit('loadProducts', response.data);
         }) 
+    },
+    addToBag({ commit }, product) {
+      commit('addToBag', product);
+    },
+    removeFromBag({ commit }, productId) {
+      if(confirm('Are your sure you want to remove the item from bag?')) {
+        commit('removeFromBag', productId);
+      }
     }
   },
   modules: {
   }
 })
+

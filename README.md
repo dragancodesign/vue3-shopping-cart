@@ -339,13 +339,31 @@ But every time you have doubts about this, just go back to the documentation and
 In the main component, we are calling an action when we create the component, which is called load product.  
 So we are using the dispatch method to call this action. Then what this action is doing is loading the data from the API and calling a mutation. And we use the commit method to call a mutation and then the mutation is going to alter the state and once the state is altered, the components that use the state are going to be updated. This is why we are seeing the products in the dev tools in that computer property. OK, so this is exactly what is drawn here. So even though we have some extra steps to make this work, this is actually pretty simple.
 
-
-
-
 ## BUILDING THE FUNCTIONALITY OF THE PAGE (Add to cart, etc. ... )  
 
-4. Vuex & Vue Router  
-41. Rendering the Products  
+**Section 4. Vuex & Vue Router**  
+*41. Rendering the Products*
 
 *NOW STARTS THE FUN PART: Building the functionality of the page* 
+- In HomeView.vue file: 
+```html
+  <h1>E-Shop</h1>
+    <div class="products">
+
+      <div
+        v-for="(product, index) in this.products" :key="index" 
+        class="product">
+        <div class="product-image" :style="{backgroundImage: 'url(' + product.image + ')'}"></div>
+        <h4>Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</h4> // !!! Since it's HTML element we can put it inside the curly braces.
+        <p class="price"> € 55.99</p>
+        <button>Add to Cart</button>
+      </div>
+
+    </div>
+```
+
+#### Adding Products to Bag 
+
+To add the products to Bag (Cart) we have to create a new STATE in our store. We have to add another array. If we have only a few products then it's to just add a property to them and set it to True. But it's not the best solution because it is not scalable ! The best way to do that is to have a different state for the Products that are in Bag.  
+
 

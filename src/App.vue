@@ -1,8 +1,8 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/basket">Basket</router-link>
+    <router-link to="/">Home</router-link>  |
+    <router-link to="/about">About</router-link>  |
+    <router-link to="/basket">Shopping bag ({{this.productsInBag.length}})</router-link>
   </div>
   <router-view/>
 </template>
@@ -15,7 +15,12 @@ export default {
 
   created() {
     this.$store.dispatch('loadProducts');
-      } 
+      },
+  computed: {
+    productsInBag() {
+  return this.$store.state.productsInBag;
+}
+  }
 }
   
 </script>
