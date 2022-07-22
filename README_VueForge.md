@@ -15,3 +15,7 @@ git init
 npm init  
 git clone https://github.com/vueschool/vuejs-forge-the-project.git 
 ```
+
+### *To CHECK on which GitHub repository URL I am now? It shows me the link:*   
+```git remote -v``` The output is:  
+```
